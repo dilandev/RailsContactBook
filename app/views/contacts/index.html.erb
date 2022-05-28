@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+
+<h1>Contact List</h1>
+
+<div id="contacts">
+  <table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Instagram</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+    <% if contact.user == current_user %>
+      <tr>
+        <td>
+          <%= link_to contact.first_name + ' ' + contact.last_name, contact, class:"text-decoration-none fw-semibold text-info" %>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.instagram %></td>
+        <td><%= link_to "Show", contact, class: "btn btn-outline-info btn-sm" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<%= link_to "New contact", new_contact_path, class: "btn btn-outline-success btn-md" %>
+
+<% else %>
+
+  <h1>Hello World</h1>
+  This is my first rails webpage..
+
+<% end %>

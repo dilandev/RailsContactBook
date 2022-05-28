@@ -1,0 +1,45 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group pt-3">
+    <%= form.label :first_name, class:"form-label" %>
+    <%= form.text_field :first_name, class:"form-control" %>
+  </div>
+
+  <div class="form-group pt-2">
+    <%= form.label :last_name, class:"form-label" %>
+    <%= form.text_field :last_name, class:"form-control"  %>
+  </div>
+
+  <div class="form-group pt-2">
+    <%= form.label :email, class:"form-label" %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+
+  <div class="form-group pt-2">
+    <%= form.label :phone, class:"form-label" %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="form-group pt-2">
+    <%= form.label :instagram, class:"form-label" %>
+    <%= form.text_field :instagram,  class:"form-control" %>
+  </div>
+  <div class="form-group pt-2">
+    <%= form.number_field :user_id, id: :contact_user_id, class:"form-control", value:current_user.id, type: :hidden %>
+  </div>
+  
+  <div class="pt-3">
+    <%= form.submit class:"btn btn-outline-primary btn-md" %>
+  </div>
+<% end %>
