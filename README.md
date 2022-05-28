@@ -1,24 +1,7 @@
 # Contact Book Created Using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Contact Book app with user management.
 
-Things you may want to cover:
+Ruby version: 3.1
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails version: 7.0.3
